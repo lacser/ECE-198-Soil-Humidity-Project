@@ -28,3 +28,13 @@
 - Check the wire connections from the STM32 Nucleoboard as well as the soil moisture sensor to see if they are still connected securely.
 - If the issue persists, consider replacing the cables. New cables can be purchased online or at electronic component shops. It is advised that cables are replaced regularly, or at least once every year.
 - If the issue persists, consider replacing the sensor, especially if it had been exposed to water and dust for long periods of time. 
+
+## Diagrams
+
+![Rough Diagram](readme-assets/rough-diagram.png)
+
+![Wire Diagram 1](readme-assets/wire-diagram-1.png)
+
+![Wire Diagram 2](readme-assets/wire-diagram-2.png)
+
+![Specific Diagram](readme-assets/specific-diagram.png)
