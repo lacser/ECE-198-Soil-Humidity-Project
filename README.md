@@ -1,5 +1,9 @@
 # ECE-198-Soil-Humidity-Project
 
+## Navigating This Repo
+
+You will find everything you need in the base directory of this repo. Please read over the design document carefully and download the raw program file to copy & paste into the CubeIDE, the instructions for installing which is included in the design document. However, if you would like to dig a bit deeper, you can find launch info in the core folder, and older versions of our design in the archive folder.
+
 ## Installation Manual 
 
 1. Carefully place the soil moisture measurer in the soil and place the microcontroller-container 1 on the ground near it. 
