@@ -12,23 +12,24 @@ uint16_t count {0};
   while (1)
   {
     
-    HAL_ADC_PollForConversion(&hadc1,1000); //Translates to decimal data from analog
-    readValue = HAL_ADC_GetValue(&hadc1);
-    count += 1; //Counts the number of data collected
-    if (count < 3){
-        valueSum += readValue;
-        continue;
-    }
-    uint8_t parity = 0;
-    uint16_t value_copy = valueSum; //Make an expendable copy of value
-    while (value_copy){
-        parity ^= (value_copy & 1); 
-        value_copy >>= 1;
-    } //This algorithm makes parity 1 if there is an odd number of 1 bits, and 0 if an even number of 1 bits
-    valueSum <<= 1;
-    valueSum += parity; //This appends the parity bit to the end of the data
-    HAL_UART_Transmit(&huart1, valueSum, sizeof(valueSum) - 1, HAL_MAX_DELAY); //UART is preconfigured in the CubeIDE
+	    HAL_ADC_PollForConversion(&hadc1,1000); //Translates to decimal data from analog
+	    readValue = HAL_ADC_GetValue(&hadc1);
+	    count += 1; //Counts the number of data collected
+	    if (count < 3){
+	        valueSum += readValue;
+	        continue;
+	    } 
+	    uint8_t parity = 0;
+	    uint16_t value_copy = valueSum; //Make an expendable copy of value
+	    while (value_copy){
+	        parity ^= (value_copy & 1);
+	        value_copy >>= 1;
+	    } //This algorithm makes parity 1 if there is an odd number of 1 bits, and 0 if an even number of 1 bits
+	    valueSum <<= 1;
+	    valueSum += parity; //This appends the parity bit to the end of the data
+	    //HAL_UART_Transmit(&huart2, (uint8_t*)&valueSum, sizeof(valueSum), HAL_MAX_DELAY);
 
+	    count = 0;
 
   }  
     /* USER CODE END WHILE */
